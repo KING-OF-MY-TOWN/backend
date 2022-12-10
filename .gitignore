@@ -24,3 +24,10 @@ hs_err_pid*
 
 # csv files
 *.csv
+
+# environment file
+*.env
+
+# mac
+.DS_Store
+
