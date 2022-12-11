@@ -1,31 +1,14 @@
-# services:
-#   db:
-#     image: mysql:8.0
-#     volumes:
-#       - komt-mysql-volume:/var/lib/mysql
-#     environment:
-#       MYSQL_ROOT_PASSWORD: '1234'
-#       MYSQL_DATABSE: king_of_my_town
-#     ports:
-#       - 3306:3306
-#     expose:
-#       - '3306'
-#   adminer:
-#     image: adminer
-#     restart: always
-#     ports:
-#       - 9000:8080
-
-# volumes:
-#   komt-mysql-volume:
-
 services:
   db:
     image: mariadb
     restart: always
     env_file: ./db/mariadb.env
+    command: --default-authentication-plugin=mysql_native_password
+    volumes:
+      - komt-mariadb-volume:/var/lib/mysql
+      - ./db/script/init.sql:/docker-entrypoint-initdb.d/init.sql
     ports:
-      - 3306:3306
+      - 3500:3306
   
   adminer:
     image: adminer
@@ -34,4 +17,4 @@ services:
       - 9000:8080
 
 volumes:
-  komt-mysql-volume:
+  komt-mariadb-volume:
