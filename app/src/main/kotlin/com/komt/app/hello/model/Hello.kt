@@ -1,16 +1,15 @@
 package com.komt.app.hello.model
 
-import jakarta.persistence.Entity
-import jakarta.persistence.GeneratedValue
-import jakarta.persistence.Id
+import jakarta.persistence.*
 
 @Entity
 class Hello {
     @Id
-    @GeneratedValue()
-    private val id:Long? = null
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    var id:Long? = null
 
-    private lateinit var message:String
+    @Column(nullable = false, length = 30)
+    lateinit var message:String
 
 
 }
