@@ -7,10 +7,6 @@ import org.springframework.stereotype.Service
 
 @Service
 class HelloService(val em: EntityManager) {
-    fun getAllHi() {
-        TODO()
-    }
-
     @Transactional
     fun getHi(id: Long):Hello {
         val toFind = Hello()
