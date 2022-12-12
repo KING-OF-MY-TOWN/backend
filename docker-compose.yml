@@ -1,4 +1,9 @@
+version: '3.9'
 services:
+  server:
+    image: komtserver
+    ports:
+      - 9000:8080
   db:
     image: mariadb
     restart: always
@@ -7,14 +12,12 @@ services:
     volumes:
       - komt-mariadb-volume:/var/lib/mysql
       - ./db/script/init.sql:/docker-entrypoint-initdb.d/init.sql
-    ports:
-      - 3500:3306
   
   adminer:
     image: adminer
     restart: always
     ports:
-      - 9000:8080
+      - 9010:8080
 
 volumes:
   komt-mariadb-volume:

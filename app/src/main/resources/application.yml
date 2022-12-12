@@ -1,0 +1,15 @@
+spring:
+  datasource:
+    url: jdbc:mariadb://db/king_of_my_town?characterEncoding=UTF-8
+    username: younghch
+    password: 1234
+    driver-class-name: org.mariadb.jdbc.Driver
+  
+  jpa:
+    database: mysql
+    show-sql: true
+    hibernate:
+        ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
