@@ -77,7 +77,7 @@ self code review -> 나중에 팀원 들어왔을 환경을 위해 gitlab과 같
 - MariaDB
 - JPA
 - Spring Boot Kotlin
-- Flutter: 추후 프런트 개발자가 선호하는 기술로 변경 가능
+- React Native
 
 ## Open Questions
 
