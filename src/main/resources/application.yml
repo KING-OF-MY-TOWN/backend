@@ -1,0 +1,7 @@
+
+spring:
+  datasource:
+    url: jdbc:mariadb://komt-mariadb?characterEncoding=UTF-8
+    username: root
+    password: "abcd"
+    driver-class-name: org.mariadb.jdbc.Driver
