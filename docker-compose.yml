@@ -1,7 +1,7 @@
 version: '3.9'
 services:
-  server:
-    image: komtserver
+  api:
+    build: ./app
     ports:
       - 9000:8080
   db:
